@@ -42,7 +42,7 @@ node test\test.js
 
 # tui.editor
 
-见 [test.js](./tui.editor-editor-3.2.2/libs/toastmark/src/__test__/test.js)
+见 [test.js](./tui.editor-editor-3.2.2/libs/toastmark/src/__test__/test.ts)
 
 ```
 cd tui.editor-editor-3.2.2
@@ -52,7 +52,7 @@ npx tsx src/__test__/test.ts
 ```
 
 # cherry-markdown
-
+见 [test.test.js](./cherry-markdown-0.8.46/test/test.test.js)
 ```
 cd cherry-markdown-0.8.46
 npm install

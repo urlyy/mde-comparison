@@ -82,6 +82,7 @@
     "cross-env": "^6.0.3"
   },
   "dependencies": {
+    "@toast-ui/editor": "file:",
     "dompurify": "^2.3.3",
     "prosemirror-commands": "^1.1.9",
     "prosemirror-history": "^1.1.3",
