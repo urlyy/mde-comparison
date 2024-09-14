@@ -1,0 +1,7 @@
+*.xlsx
+_projects/*
+jest.md
+packageTest/*
+projects/*.zip
+**/node_modules
+projects/marked-14.0.0/lib
