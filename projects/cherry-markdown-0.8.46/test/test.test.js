@@ -51,9 +51,9 @@ const testSyntax = ()=>{
     // let gfmTotal = 0;
     // for(const item of gfm){
     //   gfmTotal += 1;
-    //   let result = parse(item.markdown);
-    //   if(cleanHTML(result) == item.html){
-    //     gfmPass += 1;
+    //   let result = cleanHTML(parse(item.markdown));
+    //   if(result == cleanHTML(item.html)){
+    //       gfmPass += 1;
     //   }
     // }
     // console.log(`gfm: ${gfmPass}/${gfmTotal}`);

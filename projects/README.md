@@ -42,7 +42,7 @@ node test\test.js
 
 # tui.editor
 
-见 [test.js](./tui.editor-editor-3.2.2/libs/toastmark/src/__test__/test.ts)
+见 [test.ts](./tui.editor-editor-3.2.2/libs/toastmark/src/__test__/test.ts)
 
 ```
 cd tui.editor-editor-3.2.2

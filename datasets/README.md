@@ -43,7 +43,7 @@
     url = 'https://github.github.com/gfm/'
     fetch_and_parse(url)
     ```
-    但是我改为使用了 https://github.com/markedjs/marked/blob/master/test/specs/gfm/gfm.0.29.json 中的数据，只包括了 gfm 相较commonmark新增的语法。
+    但是我改为使用了 https://github.com/markedjs/marked/blob/master/test/specs/gfm/gfm.0.29.json 中的数据，对应`gfm_ext.spec.json`，只包括了 gfm 相较 commonmark 新增的语法。
 
 - 中小文本：在每个section中选取2个
     ```javascript
