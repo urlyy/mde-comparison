@@ -1,0 +1,20 @@
+{
+  "name": "tui.editor-3.2.2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@toast-ui/editor": "^3.2.2",
+    "tui.editor-3.2.2": "file:"
+  },
+  "devDependencies": {
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

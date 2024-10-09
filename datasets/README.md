@@ -3,7 +3,36 @@
 
 - commommark-0.31.2: https://spec.commonmark.org/0.31.2
 
-# Note
+
+# NOTE
+下面那块`数据来源`的数据未使用，改为基于 https://commonmark.org/help/ 构建了example.md，并在此基础上构建测试数据。
+
+- big_testdata = `500` * example.md
+
+- small_testdata = `125` * example.md
+
+```javascript
+const fs = require('fs');
+
+const md = fs.readFileSync('example.md', 'utf-8');
+const writeTestData = (filename,num)=>{
+    // 读取文件内容
+    let result = Array(num).fill(md).join('\n');
+    fs.writeFile(filename, result, (err) => {
+        if (err) {
+            console.error('写入Markdown时发生错误:', err);
+            return;
+        }
+        console.log('Markdown已成功写入。');
+    });
+}
+
+writeTestData("big_testdata.md",500);
+writeTestData("small_testdata.md",125);
+```
+change_testdata为大模型生成的。
+
+# ~~数据来源(因部分解析器处理后报错，不再使用)~~
 - GFM 似乎没有直接下载测试集的接口，可以通过简单python爬虫将页面上的example全爬下来当测试集。
     ```python
     import requests
@@ -45,40 +74,7 @@
     ```
     但是我改为使用了 https://github.com/markedjs/marked/blob/master/test/specs/gfm/gfm.0.29.json 中的数据，对应`gfm_ext.spec.json`，只包括了 gfm 相较 commonmark 新增的语法。
 
-- 中小文本：在每个section中选取2个
-    ```javascript
-    const data = require('./commonmark.spec.json');
-    
-    const groupData = data.reduce((groups, item) => {
-        const section = item.section;
-        if (!groups[section]) {
-        	groups[section] = [];
-        }
-        groups[section].push(item);
-        return groups;
-    }, {});
-    
-    let md = "";
-    for(let k in groupData){
-        for(let _=0; _<2; _++){
-            const items = groupData[k];
-            const idx = Math.floor(Math.random() * items.length);
-            md += items[idx].markdown + '\n';
-            data.push(items[idx]);
-        }
-    }
-    
-    const fs = require('fs');
-    fs.writeFile('small_commonmark.md', md, (err) => {
-        if (err) {
-            console.error('写入Markdown时发生错误:', err);
-            return;
-        }
-        console.log('Markdown已成功写入。');
-    });
-    ```
-
-- 超大文本：10倍 xx.spec.json
+- 文本数据：基于commonmark.spec.json，小文本为 1 倍，大文本为 20 倍
     ```javascript
     const data = require('./commonmark.spec.json');
     
@@ -96,3 +92,6 @@
         console.log('Markdown已成功写入。');
     });
     ```
+    > 部分编辑器无法成功解析，并且报错
+
+    ![](../assets/parse_error.jpg)

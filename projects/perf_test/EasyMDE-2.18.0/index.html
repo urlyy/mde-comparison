@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EasyMDE test</title>
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+  </head>
+  <body>
+    <button id="load-big">加载大文本</button>
+    <button id="load-small">加载小文本</button>
+    <button id="change">文本变更</button>
+    <textarea id="editor"></textarea>
+    <script type="module">
+      const editor = new EasyMDE({
+        element: document.getElementById('editor'),
+        sideBySideFullscreen: false,
+        minHeight:"700px"
+      });
+
+      const run = async()=>{
+          const bigText = await (await fetch('big_testdata.md')).text();
+          const smallText = await (await fetch('small_testdata.md')).text();
+          const changeText = await (await fetch('change_testdata.md')).text();
+
+          console.log("加载完成")
+
+          editor.toggleSideBySide();
+          
+          document.getElementById("load-big").addEventListener("click", ()=>{
+              editor.value(bigText);
+          });
+
+          document.getElementById("load-small").addEventListener("click", ()=>{
+              editor.value(smallText);
+          });
+
+          document.getElementById("change").addEventListener("click", ()=>{
+              editor.value(changeText);
+          });
+      }
+      await run();
+
+
+    </script>
+  </body>
+</html>
