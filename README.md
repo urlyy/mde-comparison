@@ -214,7 +214,7 @@ Markdown渲染引擎一般采用AST或正则这两种方式。
 
 chrome 版本: 129.0.6668.90 (64位)
 
-测试方案和截图见 [](https://github.com/urlyy/mde-comparison/tree/main/projects/perf_test/README.md)
+测试方案和截图见 https://github.com/urlyy/mde-comparison/tree/main/projects/perf_test
 
 | 名称            | 小文本初次渲染(ms) | 小文本变更后渲染(ms) | 大文本初次渲染(ms) | 大文本变更后渲染(ms) |
 | --------------- | ------------------ | -------------------- | ------------------ | -------------------- |
